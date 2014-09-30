@@ -1,0 +1,1114 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/23/2014 6:34:25 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="NB272"
+  DTS:CreatorName="INSIDE\Alexey.Bastin"
+  DTS:DTSID="{23FE2C3D-A176-4C59-A165-A97376D649B0}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3436.0"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{5D56F90A-6F38-4CA8-95AA-CA092837D99D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NB272.TEST]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{48E17199-CB90-4EAF-94B9-B5B1A42BB4A4}"
+      DTS:ObjectName="NB272.TEST">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TEST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[output.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{E12F8D63-1E71-48C6-92DF-CACB2246A942}"
+      DTS:ObjectName="output.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\alexey.bastin\Downloads\output.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Диспетчер HTTP-сеансов]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{78639BF1-0944-4FEE-B052-0F5338CCA27E}"
+      DTS:ObjectName="Диспетчер HTTP-сеансов">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="http://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx">
+          <DTS:HttpConnection
+            DTS:ServerURL="http://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0zZ3lkiq6EuqvX1YZ+ui2QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC6m7uaIioHsCTxLol5YaX3AAAAAASAAACgAAAAEAAAAIprK0IDPg50uYF8jXjNty4IAAAAuk+b4HBTar0UAAAAACh9M+2MAU6mVLdWAjY3JM6HPaw</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0zZ3lkiq6EuqvX1YZ+ui2QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA97l40B7tvuulyduaYkMoXAAAAAASAAACgAAAAEAAAAG9rswbaGRHwD2kecIPP1mQIAAAAOJ129Wkn4q8UAAAAJzdoj05njxicDRDVXqELAov0h6Y</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A9646D5E-C157-42DB-B682-AFEA3AFECA86}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Date">
+      <DTS:VariableValue
+        DTS:DataType="7">9/29/2014</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{22944F45-BEDE-430B-BE8B-D2FFBE581F2C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dates">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A39B1879-01B2-4185-82BF-1A9A69869393}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="XML">
+      <DTS:VariableValue
+        DTS:DataType="8">&lt;?xml version="1.0" encoding="utf-16"?&gt; &lt;ValuteData OnDate="20140923" xmlns=""&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Австралийский доллар                                                                                                                                                                                                                                          &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;34.3539&lt;/Vcurs&gt;     &lt;Vcode&gt;36&lt;/Vcode&gt;     &lt;VchCode&gt;AUD&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Азербайджанский манат                                                                                                                                                                                                                                         &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;49.2572&lt;/Vcurs&gt;     &lt;Vcode&gt;944&lt;/Vcode&gt;     &lt;VchCode&gt;AZN&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Фунт стерлингов Соединенного королевства                                                                                                                                                                                                                      &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;63.0754&lt;/Vcurs&gt;     &lt;Vcode&gt;826&lt;/Vcode&gt;     &lt;VchCode&gt;GBP&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Армянский драм                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;1000&lt;/Vnom&gt;     &lt;Vcurs&gt;94.6995&lt;/Vcurs&gt;     &lt;Vcode&gt;51&lt;/Vcode&gt;     &lt;VchCode&gt;AMD&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Белорусский рубль                                                                                                                                                                                                                                             &lt;/Vname&gt;     &lt;Vnom&gt;10000&lt;/Vnom&gt;     &lt;Vcurs&gt;36.6017&lt;/Vcurs&gt;     &lt;Vcode&gt;974&lt;/Vcode&gt;     &lt;VchCode&gt;BYR&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Болгарский лев                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;25.3055&lt;/Vcurs&gt;     &lt;Vcode&gt;975&lt;/Vcode&gt;     &lt;VchCode&gt;BGN&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Бразильский реал                                                                                                                                                                                                                                              &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;16.2922&lt;/Vcurs&gt;     &lt;Vcode&gt;986&lt;/Vcode&gt;     &lt;VchCode&gt;BRL&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Венгерский форинт                                                                                                                                                                                                                                             &lt;/Vname&gt;     &lt;Vnom&gt;100&lt;/Vnom&gt;     &lt;Vcurs&gt;15.9082&lt;/Vcurs&gt;     &lt;Vcode&gt;348&lt;/Vcode&gt;     &lt;VchCode&gt;HUF&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Датская крона                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;66.6428&lt;/Vcurs&gt;     &lt;Vcode&gt;208&lt;/Vcode&gt;     &lt;VchCode&gt;DKK&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Доллар США                                                                                                                                                                                                                                                    &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;38.5782&lt;/Vcurs&gt;     &lt;Vcode&gt;840&lt;/Vcode&gt;     &lt;VchCode&gt;USD&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Евро                                                                                                                                                                                                                                                          &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;49.6193&lt;/Vcurs&gt;     &lt;Vcode&gt;978&lt;/Vcode&gt;     &lt;VchCode&gt;EUR&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Индийская рупия                                                                                                                                                                                                                                               &lt;/Vname&gt;     &lt;Vnom&gt;100&lt;/Vnom&gt;     &lt;Vcurs&gt;63.4875&lt;/Vcurs&gt;     &lt;Vcode&gt;356&lt;/Vcode&gt;     &lt;VchCode&gt;INR&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Казахский тенге                                                                                                                                                                                                                                               &lt;/Vname&gt;     &lt;Vnom&gt;100&lt;/Vnom&gt;     &lt;Vcurs&gt;21.2032&lt;/Vcurs&gt;     &lt;Vcode&gt;398&lt;/Vcode&gt;     &lt;VchCode&gt;KZT&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Канадский доллар                                                                                                                                                                                                                                              &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;35.1766&lt;/Vcurs&gt;     &lt;Vcode&gt;124&lt;/Vcode&gt;     &lt;VchCode&gt;CAD&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Киргизский сом                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;100&lt;/Vnom&gt;     &lt;Vcurs&gt;71.1775&lt;/Vcurs&gt;     &lt;Vcode&gt;417&lt;/Vcode&gt;     &lt;VchCode&gt;KGS&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Китайский юань                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;62.8494&lt;/Vcurs&gt;     &lt;Vcode&gt;156&lt;/Vcode&gt;     &lt;VchCode&gt;CNY&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Литовский лит                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;14.3675&lt;/Vcurs&gt;     &lt;Vcode&gt;440&lt;/Vcode&gt;     &lt;VchCode&gt;LTL&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Молдавский лей                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;26.8463&lt;/Vcurs&gt;     &lt;Vcode&gt;498&lt;/Vcode&gt;     &lt;VchCode&gt;MDL&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Норвежская крона                                                                                                                                                                                                                                              &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;60.8527&lt;/Vcurs&gt;     &lt;Vcode&gt;578&lt;/Vcode&gt;     &lt;VchCode&gt;NOK&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Польский злотый                                                                                                                                                                                                                                               &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;11.8574&lt;/Vcurs&gt;     &lt;Vcode&gt;985&lt;/Vcode&gt;     &lt;VchCode&gt;PLN&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Новый румынский лей                                                                                                                                                                                                                                           &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;11.2736&lt;/Vcurs&gt;     &lt;Vcode&gt;946&lt;/Vcode&gt;     &lt;VchCode&gt;RON&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;СДР (специальные права заимствования)                                                                                                                                                                                                                         &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;57.7558&lt;/Vcurs&gt;     &lt;Vcode&gt;960&lt;/Vcode&gt;     &lt;VchCode&gt;XDR&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Сингапурский доллар                                                                                                                                                                                                                                           &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;30.4437&lt;/Vcurs&gt;     &lt;Vcode&gt;702&lt;/Vcode&gt;     &lt;VchCode&gt;SGD&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Таджикский сомони                                                                                                                                                                                                                                             &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;76.5000&lt;/Vcurs&gt;     &lt;Vcode&gt;972&lt;/Vcode&gt;     &lt;VchCode&gt;TJS&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Турецкая лира                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;17.2170&lt;/Vcurs&gt;     &lt;Vcode&gt;949&lt;/Vcode&gt;     &lt;VchCode&gt;TRY&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Новый туркменский манат                                                                                                                                                                                                                                       &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;13.5196&lt;/Vcurs&gt;     &lt;Vcode&gt;934&lt;/Vcode&gt;     &lt;VchCode&gt;TMT&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Узбекский сум                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;1000&lt;/Vnom&gt;     &lt;Vcurs&gt;16.6285&lt;/Vcurs&gt;     &lt;Vcode&gt;860&lt;/Vcode&gt;     &lt;VchCode&gt;UZS&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Украинская гривна                                                                                                                                                                                                                                             &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;29.1156&lt;/Vcurs&gt;     &lt;Vcode&gt;980&lt;/Vcode&gt;     &lt;VchCode&gt;UAH&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Чешская крона                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;18.0137&lt;/Vcurs&gt;     &lt;Vcode&gt;203&lt;/Vcode&gt;     &lt;VchCode&gt;CZK&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Шведская крона                                                                                                                                                                                                                                                &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;54.0727&lt;/Vcurs&gt;     &lt;Vcode&gt;752&lt;/Vcode&gt;     &lt;VchCode&gt;SEK&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Швейцарский франк                                                                                                                                                                                                                                             &lt;/Vname&gt;     &lt;Vnom&gt;1&lt;/Vnom&gt;     &lt;Vcurs&gt;41.0931&lt;/Vcurs&gt;     &lt;Vcode&gt;756&lt;/Vcode&gt;     &lt;VchCode&gt;CHF&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Южноафриканский рэнд                                                                                                                                                                                                                                          &lt;/Vname&gt;     &lt;Vnom&gt;10&lt;/Vnom&gt;     &lt;Vcurs&gt;34.6951&lt;/Vcurs&gt;     &lt;Vcode&gt;710&lt;/Vcode&gt;     &lt;VchCode&gt;ZAR&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Вон Республики Корея                                                                                                                                                                                                                                          &lt;/Vname&gt;     &lt;Vnom&gt;1000&lt;/Vnom&gt;     &lt;Vcurs&gt;37.0623&lt;/Vcurs&gt;     &lt;Vcode&gt;410&lt;/Vcode&gt;     &lt;VchCode&gt;KRW&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt;   &lt;ValuteCursOnDate&gt;     &lt;Vname&gt;Японская иена                                                                                                                                                                                                                                                 &lt;/Vname&gt;     &lt;Vnom&gt;100&lt;/Vnom&gt;     &lt;Vcurs&gt;35.4270&lt;/Vcurs&gt;     &lt;Vcode&gt;392&lt;/Vcode&gt;     &lt;VchCode&gt;JPY&lt;/VchCode&gt;   &lt;/ValuteCursOnDate&gt; &lt;/ValuteData&gt;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Задача &quot;Выполнение SQL&quot;"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{5B6A685D-589F-46FE-90B0-DEE1030DE0AC}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача &quot;Выполнение SQL&quot;"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{48E17199-CB90-4EAF-94B9-B5B1A42BB4A4}"
+          SQLTask:SqlStatementSource="with mycte as&#xA;(&#xA;select cast('2014-01-01' as datetime) DateKey&#xA;union all&#xA;select DateKey + 1&#xA;from mycte   &#xA;where DateKey + 1 &lt; = GetDate()&#xA;)&#xA;select * from mycte&#xA;where DateKey &gt;= (select isnull(max(Vdate), '2014-01-01') from CurrencyRates)&#xA;OPTION (MAXRECURSION 0)"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Dates" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Контейнер &quot;Цикл по каждому элементу&quot;"
+      DTS:DTSID="{A70A3366-0D5E-425F-8CD6-3900A1537121}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Контейнер &quot;Цикл по каждому элементу&quot;">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:DTSID="{AA3B6BF3-CFE6-45E2-B4D2-221808E39E75}"
+        DTS:ObjectName="{AA3B6BF3-CFE6-45E2-B4D2-221808E39E75}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Dates" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Веб-служба&quot;"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Задача &quot;Веб-служба&quot;"
+          DTS:DTSID="{508E9EF2-2F01-4D30-AA89-17E75D4393F8}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Задача &quot;Веб-служба&quot;"
+          DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <WSTask:WebServiceTaskData
+              WSTask:ConnectionName="{78639BF1-0944-4FEE-B052-0F5338CCA27E}"
+              WSTask:Service="DailyInfo"
+              WSTask:WSDLFile="C:\Users\alexey.bastin\Documents\Газпромтранс\Web Services\DailyInfo.wsdl"
+              WSTask:OutputType="Variable"
+              WSTask:OutputLocation="User::XML" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+              <WSTask:MethodInfo
+                WSTask:MethodName="GetCursOnDateXML"
+                WSTask:MessageName="">
+                <WSTask:Documentation>РџРѕР»СѓС‡РµРЅРёРµ РµР¶РµРґРЅРµРІРЅС‹С… РєСѓСЂСЃРѕРІ РІР°Р»СЋС‚ (РєР°Рє XMLDocument)</WSTask:Documentation>
+                <WSTask:ParamInfo
+                  WSTask:Name="On_date"
+                  WSTask:Datatype="dateTime"
+                  WSTask:ParamType="Primitive"
+                  WSTask:SeqNumber="0">
+                  <WSTask:PrimitiveValue>29.09.2014</WSTask:PrimitiveValue>
+                </WSTask:ParamInfo>
+              </WSTask:MethodInfo>
+            </WSTask:WebServiceTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Выполнение SQL&quot; 1"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Задача &quot;Выполнение SQL&quot;"
+          DTS:DTSID="{C6760F50-C71A-419A-9F67-A51658AA7DB4}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Задача &quot;Выполнение SQL&quot; 1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{48E17199-CB90-4EAF-94B9-B5B1A42BB4A4}"
+              SQLTask:SqlStatementSource="delete from CurrencyRates where Vdate = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Date"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{7ACC939D-8385-4941-8717-BD84C4965057}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Задача потока данных"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;"
+                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  contactInfo="Извлекает данные из XML-файла. Пример: извлечение данных каталога из XML-файла, представляющего каталоги и элементы каталогов. Перед использованием необходимо указать схему и сформировать выходные данные для всех XML-элементов.Корпорация Майкрософт (Microsoft Corporation). Microsoft SQL Server. Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support2"
+                  description="Извлекает данные из XML-файла. Пример: извлечение данных каталога из XML-файла, представляющего каталоги и элементы каталогов. Перед использованием необходимо указать схему и сформировать выходные данные для всех XML-элементов."
+                  name="Источник &quot;XML&quot;"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                    <property
+                      dataType="System.String"
+                      description="XML-данные, используемые адаптером источника XML-данных."
+                      expressionType="Notify"
+                      name="XMLData"></property>
+                    <property
+                      dataType="System.String"
+                      description="Переменная, используемая адаптером источника XML-данных для указания XML-данных."
+                      name="XMLDataVariable">User::XML</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Определяет, каким образом адаптер источника XML-данных получает XML-данные."
+                      name="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Определение XML-схемы, используемое адаптером источника XML-данных."
+                      expressionType="Notify"
+                      name="XMLSchemaDefinition">C:\Users\alexey.bastin\Documents\Газпромтранс\Web Services\DailyInfo.xsd</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, использовать ли встроенную схему."
+                      name="UseInlineSchema">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Определяет способ сопоставления типов целочисленных значений XML."
+                      name="XMLIntegerMapping"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">0</property>
+                  </properties>
+                  <outputs>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate]"
+                      name="ValuteCursOnDate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Определяет набор строк, связанный с выходом."
+                          name="RowsetID">ValuteCursOnDate</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vname]"
+                          length="255"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vname]"
+                          name="Vname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vnom]"
+                          dataType="ui2"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vnom]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vnom]"
+                          name="Vnom"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcurs]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vcurs]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcurs]"
+                          name="Vcurs"
+                          scale="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcode]"
+                          dataType="ui2"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vcode]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcode]"
+                          name="Vcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[VchCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[VchCode]"
+                          length="255"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[VchCode]"
+                          name="VchCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vname]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vname">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vnom]"
+                          dataType="ui2"
+                          name="Vnom">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt16</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vcurs]"
+                          dataType="decimal"
+                          name="Vcurs"
+                          scale="10">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Decimal</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[Vcode]"
+                          dataType="ui2"
+                          name="Vcode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt16</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].ExternalColumns[VchCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="VchCode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate]"
+                      isErrorOut="true"
+                      name="Вывод ошибок ValuteCursOnDate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Определяет набор строк, связанный с выходом."
+                          name="RowsetID">ValuteCursOnDate</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vname]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vname]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vname]"
+                          name="Vname" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vnom]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vnom]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vnom]"
+                          name="Vnom" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vcurs]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vcurs]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vcurs]"
+                          name="Vcurs" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vcode]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vcode]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[Vcode]"
+                          name="Vcode" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[VchCode]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[VchCode]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[VchCode]"
+                          name="VchCode" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vname]"
+                          dataType="nText"
+                          name="Vname" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vnom]"
+                          dataType="nText"
+                          name="Vnom" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vcurs]"
+                          dataType="nText"
+                          name="Vcurs" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[Vcode]"
+                          dataType="nText"
+                          name="Vcode" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[Вывод ошибок ValuteCursOnDate].ExternalColumns[VchCode]"
+                          dataType="nText"
+                          name="VchCode" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;"
+                  componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+                  contactInfo="Назначение &quot;SQL Server&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;5"
+                  description="Назначение &quot;SQL Server&quot;"
+                  name="Назначение &quot;SQL Server&quot;"
+                  version="5">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                      name="DefaultCodePage">1251</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Имя объекта базы данных для копирования данных."
+                      expressionType="Notify"
+                      name="BulkInsertTableName">[dbo].[CurrencyRates]</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, что в ходе операции копирования данных в целевом объекте проверяются все ограничения. Соответствует параметру CHECK_CONSTRAINTS массовой вставки."
+                      name="BulkInsertCheckConstraints">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает номер первой строки для копирования. Соответствует параметру FIRSTROW массовой вставки."
+                      expressionType="Notify"
+                      name="BulkInsertFirstRow">-1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, что любые триггеры вставки, определенные на целевом объекте, будут выполняться в ходе копирования данных. Соответствует параметру FIRE_TRIGGERS массовой вставки."
+                      name="BulkInsertFireTriggers">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Значение false указывает, что значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Соответствует параметру KEEPIDENTITY массовой вставки."
+                      name="BulkInsertKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, будут ли в назначение копироваться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                      name="BulkInsertKeepNulls">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает номер последней строки для копирования. Соответствует параметру LASTROW массовой вставки."
+                      expressionType="Notify"
+                      name="BulkInsertLastRow">-1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает максимальное число синтаксических ошибок и ошибок компиляции, которые могут произойти до отмены операции копирования данных. Каждая строка, которую не удается скопировать, пропускается и считается за одну ошибку. Соответствует параметру MAXERRORS массовой вставки."
+                      name="BulkInsertMaxErrors">-1</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает порядок сортировки данных для копирования. Соответствует параметру ORDER массовой вставки."
+                      expressionType="Notify"
+                      name="BulkInsertOrder"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, что в течение операции копирования данных применяется блокировка на уровне таблиц. Соответствует параметру TABLOCK массовой вставки."
+                      name="BulkInsertTablock">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Задает интервал времени (в секундах), в течение которого адаптер загрузки данных SQL будет находиться с режиме ожидания перед завершением работы в случае, когда данные для вставки недоступны. Значение времени ожидания 0 означает, что адаптер загрузки данных SQL не будет завершать работу из-за истечения времени ожидания."
+                      expressionType="Notify"
+                      name="Timeout">30</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает на выполнение фиксации в процеcсе вставки данных. Значение 0 указывает, что по окончание вставки данных будет выполнена одна фиксация."
+                      name="MaxInsertCommitSize">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NB272.TEST]"
+                      connectionManagerRefId="Package.ConnectionManagers[NB272.TEST]"
+                      description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;]"
+                      hasSideEffects="true"
+                      name="Вход назначения &quot;SQL Server&quot;">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[Vcurs]"
+                          cachedDataType="decimal"
+                          cachedName="Vcurs"
+                          cachedScale="10"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vcurs]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcurs]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[new Vname]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="new Vname"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vname]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vname]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[new VchCode]"
+                          cachedCodepage="1251"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="new VchCode"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[VchCode]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new VchCode]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[new Vnom]"
+                          cachedDataType="decimal"
+                          cachedName="new Vnom"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vnom]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vnom]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[new Vcode]"
+                          cachedDataType="i4"
+                          cachedName="new Vcode"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vcode]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vcode]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[Vdate]"
+                          cachedDataType="dbDate"
+                          cachedName="Vdate"
+                          externalMetadataColumnId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vdate]"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Vdate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vdate]"
+                          dataType="dbDate"
+                          name="Vdate" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vname]"
+                          codePage="1251"
+                          dataType="str"
+                          length="255"
+                          name="Vname" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vnom]"
+                          dataType="numeric"
+                          name="Vnom"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vcurs]"
+                          dataType="numeric"
+                          name="Vcurs"
+                          precision="18"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Vcode]"
+                          dataType="i4"
+                          name="Vcode" />
+                        <externalMetadataColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[VchCode]"
+                          codePage="1251"
+                          dataType="str"
+                          length="255"
+                          name="VchCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных"
+                  componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+                  contactInfo="Преобразование данных;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Преобразование данных"
+                  name="Преобразование данных"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]"
+                      name="Входные данные преобразования данных">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[Vname]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Vname"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vname]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[VchCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="VchCode"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[VchCode]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[Vnom]"
+                          cachedDataType="ui2"
+                          cachedName="Vnom"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vnom]" />
+                        <inputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[Vcode]"
+                          cachedDataType="ui2"
+                          cachedName="Vcode"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate].Columns[Vcode]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных]"
+                      exclusionGroup="1"
+                      name="Выходные данные преобразования данных"
+                      synchronousInputId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vname]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vname]"
+                          name="new Vname"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Указывает входной столбец, служащий источником данных для преобразования."
+                              name="SourceInputColumnLineageID">#{Package\Контейнер "Цикл по каждому элементу"\Задача потока данных\Источник "XML".Outputs[ValuteCursOnDate].Columns[Vname]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new VchCode]"
+                          codePage="1251"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new VchCode]"
+                          name="new VchCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Указывает входной столбец, служащий источником данных для преобразования."
+                              name="SourceInputColumnLineageID">#{Package\Контейнер "Цикл по каждому элементу"\Задача потока данных\Источник "XML".Outputs[ValuteCursOnDate].Columns[VchCode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vnom]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vnom]"
+                          name="new Vnom"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Указывает входной столбец, служащий источником данных для преобразования."
+                              name="SourceInputColumnLineageID">#{Package\Контейнер "Цикл по каждому элементу"\Задача потока данных\Источник "XML".Outputs[ValuteCursOnDate].Columns[Vnom]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vcode]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[new Vcode]"
+                          name="new Vcode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Указывает входной столбец, служащий источником данных для преобразования."
+                              name="SourceInputColumnLineageID">#{Package\Контейнер "Цикл по каждому элементу"\Задача потока данных\Источник "XML".Outputs[ValuteCursOnDate].Columns[Vcode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Выходные данные ошибок преобразования данных"
+                      synchronousInputId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+                  description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+                  name="Производный столбец"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]"
+                      description="Вход преобразования &quot;Производный столбец&quot;"
+                      name="Вход производного столбца">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Выход производного столбца]"
+                      description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      name="Выход производного столбца"
+                      synchronousInputId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Vdate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Вычисление"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Vdate]"
+                          name="Vdate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Выражение производного столбца"
+                              name="Expression">(DT_DBDATE)@[User::Date]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Понятное выражение производного столбца"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)@[User::Date]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                      description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок производного столбца"
+                      synchronousInputId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[ValuteCursOnDate]"
+                  endId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]"
+                  name="ValuteCursOnDate"
+                  startId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;.Outputs[ValuteCursOnDate]" />
+                <path
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[Выход производного столбца]"
+                  endId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]"
+                  name="Выход производного столбца"
+                  startId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец.Outputs[Выход производного столбца]" />
+                <path
+                  refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[Выходные данные преобразования данных]"
+                  endId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;]"
+                  name="Выходные данные преобразования данных"
+                  startId="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;.PrecedenceConstraints[Ограничение]"
+          DTS:CreationName=""
+          DTS:DTSID="{A3E5A7C6-2F6D-4D1B-8B7A-5A090B8FD5DC}"
+          DTS:From="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Веб-служба&quot;"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение"
+          DTS:To="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Контейнер &quot;Цикл по каждому элементу&quot;.PrecedenceConstraints[Ограничение 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{FE9D3B0E-B071-4E84-9A07-FD724D8D133A}"
+          DTS:From="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Выполнение SQL&quot; 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Ограничение 1"
+          DTS:To="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Веб-служба&quot;" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{2E458165-D15A-4700-BCF6-221999C63736}"
+          DTS:ObjectName="{2E458165-D15A-4700-BCF6-221999C63736}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Date" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{96167D07-6F55-40A2-9883-3DAF24A4CDD4}"
+      DTS:From="Package\Задача &quot;Выполнение SQL&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 1"
+      DTS:To="Package\Контейнер &quot;Цикл по каждому элементу&quot;" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="sql11">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Задача &quot;Выполнение SQL&quot;"
+          TopLeft="194,69" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Веб-служба&quot;"
+          TopLeft="92,96" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача &quot;Выполнение SQL&quot; 1"
+          TopLeft="74,17" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных"
+          TopLeft="91,174" />
+        <EdgeLayout
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;.PrecedenceConstraints[Ограничение]"
+          TopLeft="185.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;.PrecedenceConstraints[Ограничение 1]"
+          TopLeft="183.75,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="365,268"
+          Size="365,311"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;"
+          TopLeft="110,169" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 1]"
+          TopLeft="295.75,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;"
+          TopLeft="124,335" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Источник &quot;XML&quot;"
+          TopLeft="136,90" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Производный столбец"
+          TopLeft="125,172" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Преобразование данных"
+          TopLeft="125,252" />
+        <EdgeLayout
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[Выходные данные преобразования данных]"
+          TopLeft="226,294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[Выход производного столбца]"
+          TopLeft="223,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных.Paths[ValuteCursOnDate]"
+          TopLeft="217.75,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Контейнер &quot;Цикл по каждому элементу&quot;\Задача потока данных\Назначение &quot;SQL Server&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
